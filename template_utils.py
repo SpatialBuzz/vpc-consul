@@ -22,9 +22,24 @@ WILDCARD_CIDR = '0.0.0.0/0'
 EC2_REGIONS = sorted([r.name for r in boto.ec2.regions() if r.name != 'cn-north-1' and r.name != 'us-gov-west-1'])
 
 EC2_INSTANCE_TYPES = [
-    't1.micro', 'm1.small', 'm1.medium', 'm1.large', 'm1.xlarge',
-    'm2.xlarge', 'm2.2xlarge', 'm2.4xlarge', 'm3.xlarge', 'm3.2xlarge',
-    'c1.medium', 'c1.xlarge', 'cc1.4xlarge', 'cc2.8xlarge', 'cg1.4xlarge'
+
+    "c1.medium", "c1.xlarge",
+    "c3.2xlarge", "c3.4xlarge","c3.8xlarge", "c3.large", "c3.xlarge",
+    "c4.2xlarge", "c4.4xlarge", "c4.8xlarge", "c4.large", "c4.xlarge",
+    "cc2.8xlarge",
+    "cr1.8xlarge",
+    "d2.2xlarge", "d2.4xlarge", "d2.8xlarge", "d2.xlarge",
+    "g2.2xlarge",
+    "hi1.4xlarge",
+    "hs1.8xlarge",
+    "i2.2xlarge", "i2.4xlarge", "i2.8xlarge", "i2.xlarge", 
+    "m1.large", "m1.medium", "m1.small", "m1.xlarge",
+    "m2.2xlarge", "m2.4xlarge", "m2.xlarge",
+    "m3.2xlarge", "m3.large", "m3.medium", "m3.xlarge",
+    "r3.2xlarge", "r3.4xlarge", "r3.8xlarge", "r3.large", "r3.xlarge",
+    "t1.micro",
+    "t2.medium", "t2.micro", "t2.small",
+    
 ]
 
 UBUNTU_SUITE = os.environ.get('UBUNTU_SUITE', 'trusty')

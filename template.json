@@ -3,13 +3,55 @@
     "Description": "A VPC stack that includes public and private subnets with a Consul cluster for DNS, service discovery and configuration management", 
     "Mappings": {
         "AWSNATAMI": {
+            "ap-northeast-1": {
+                "AMI": "ami-c7e016c7"
+            }, 
+            "ap-southeast-1": {
+                "AMI": "ami-b098a9e2"
+            }, 
+            "ap-southeast-2": {
+                "AMI": "ami-0fed9d35"
+            }, 
             "eu-west-1": {
                 "AMI": "ami-cb7de3bc"
+            }, 
+            "sa-east-1": {
+                "AMI": "ami-93fb408e"
+            }, 
+            "us-east-1": {
+                "AMI": "ami-c02b04a8"
+            }, 
+            "us-west-1": {
+                "AMI": "ami-67a54423"
+            }, 
+            "us-west-2": {
+                "AMI": "ami-2dae821d"
             }
         }, 
         "UBUNTUAMI": {
+            "ap-northeast-1": {
+                "AMI": "ami-300ff630"
+            }, 
+            "ap-southeast-1": {
+                "AMI": "ami-06586a54"
+            }, 
+            "ap-southeast-2": {
+                "AMI": "ami-b1abd98b"
+            }, 
             "eu-west-1": {
                 "AMI": "ami-23bbdc54"
+            }, 
+            "sa-east-1": {
+                "AMI": "ami-d543f9c8"
+            }, 
+            "us-east-1": {
+                "AMI": "ami-10b68a78"
+            }, 
+            "us-west-1": {
+                "AMI": "ami-f56182b1"
+            }, 
+            "us-west-2": {
+                "AMI": "ami-595b7069"
             }
         }
     }, 
@@ -32,21 +74,51 @@
         }, 
         "BastionInstanceType": {
             "AllowedValues": [
-                "t1.micro", 
-                "m1.small", 
-                "m1.medium", 
-                "m1.large", 
-                "m1.xlarge", 
-                "m2.xlarge", 
-                "m2.2xlarge", 
-                "m2.4xlarge", 
-                "m3.xlarge", 
-                "m3.2xlarge", 
                 "c1.medium", 
                 "c1.xlarge", 
-                "cc1.4xlarge", 
+                "c3.2xlarge", 
+                "c3.4xlarge", 
+                "c3.8xlarge", 
+                "c3.large", 
+                "c3.xlarge", 
+                "c4.2xlarge", 
+                "c4.4xlarge", 
+                "c4.8xlarge", 
+                "c4.large", 
+                "c4.xlarge", 
                 "cc2.8xlarge", 
-                "cg1.4xlarge"
+                "cr1.8xlarge", 
+                "d2.2xlarge", 
+                "d2.4xlarge", 
+                "d2.8xlarge", 
+                "d2.xlarge", 
+                "g2.2xlarge", 
+                "hi1.4xlarge", 
+                "hs1.8xlarge", 
+                "i2.2xlarge", 
+                "i2.4xlarge", 
+                "i2.8xlarge", 
+                "i2.xlarge", 
+                "m1.large", 
+                "m1.medium", 
+                "m1.small", 
+                "m1.xlarge", 
+                "m2.2xlarge", 
+                "m2.4xlarge", 
+                "m2.xlarge", 
+                "m3.2xlarge", 
+                "m3.large", 
+                "m3.medium", 
+                "m3.xlarge", 
+                "r3.2xlarge", 
+                "r3.4xlarge", 
+                "r3.8xlarge", 
+                "r3.large", 
+                "r3.xlarge", 
+                "t1.micro", 
+                "t2.medium", 
+                "t2.micro", 
+                "t2.small"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
@@ -55,21 +127,51 @@
         }, 
         "ConsulInstanceType": {
             "AllowedValues": [
-                "t1.micro", 
-                "m1.small", 
-                "m1.medium", 
-                "m1.large", 
-                "m1.xlarge", 
-                "m2.xlarge", 
-                "m2.2xlarge", 
-                "m2.4xlarge", 
-                "m3.xlarge", 
-                "m3.2xlarge", 
                 "c1.medium", 
                 "c1.xlarge", 
-                "cc1.4xlarge", 
+                "c3.2xlarge", 
+                "c3.4xlarge", 
+                "c3.8xlarge", 
+                "c3.large", 
+                "c3.xlarge", 
+                "c4.2xlarge", 
+                "c4.4xlarge", 
+                "c4.8xlarge", 
+                "c4.large", 
+                "c4.xlarge", 
                 "cc2.8xlarge", 
-                "cg1.4xlarge"
+                "cr1.8xlarge", 
+                "d2.2xlarge", 
+                "d2.4xlarge", 
+                "d2.8xlarge", 
+                "d2.xlarge", 
+                "g2.2xlarge", 
+                "hi1.4xlarge", 
+                "hs1.8xlarge", 
+                "i2.2xlarge", 
+                "i2.4xlarge", 
+                "i2.8xlarge", 
+                "i2.xlarge", 
+                "m1.large", 
+                "m1.medium", 
+                "m1.small", 
+                "m1.xlarge", 
+                "m2.2xlarge", 
+                "m2.4xlarge", 
+                "m2.xlarge", 
+                "m3.2xlarge", 
+                "m3.large", 
+                "m3.medium", 
+                "m3.xlarge", 
+                "r3.2xlarge", 
+                "r3.4xlarge", 
+                "r3.8xlarge", 
+                "r3.large", 
+                "r3.xlarge", 
+                "t1.micro", 
+                "t2.medium", 
+                "t2.micro", 
+                "t2.small"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
@@ -82,21 +184,51 @@
         }, 
         "NATInstanceType": {
             "AllowedValues": [
-                "t1.micro", 
-                "m1.small", 
-                "m1.medium", 
-                "m1.large", 
-                "m1.xlarge", 
-                "m2.xlarge", 
-                "m2.2xlarge", 
-                "m2.4xlarge", 
-                "m3.xlarge", 
-                "m3.2xlarge", 
                 "c1.medium", 
                 "c1.xlarge", 
-                "cc1.4xlarge", 
+                "c3.2xlarge", 
+                "c3.4xlarge", 
+                "c3.8xlarge", 
+                "c3.large", 
+                "c3.xlarge", 
+                "c4.2xlarge", 
+                "c4.4xlarge", 
+                "c4.8xlarge", 
+                "c4.large", 
+                "c4.xlarge", 
                 "cc2.8xlarge", 
-                "cg1.4xlarge"
+                "cr1.8xlarge", 
+                "d2.2xlarge", 
+                "d2.4xlarge", 
+                "d2.8xlarge", 
+                "d2.xlarge", 
+                "g2.2xlarge", 
+                "hi1.4xlarge", 
+                "hs1.8xlarge", 
+                "i2.2xlarge", 
+                "i2.4xlarge", 
+                "i2.8xlarge", 
+                "i2.xlarge", 
+                "m1.large", 
+                "m1.medium", 
+                "m1.small", 
+                "m1.xlarge", 
+                "m2.2xlarge", 
+                "m2.4xlarge", 
+                "m2.xlarge", 
+                "m3.2xlarge", 
+                "m3.large", 
+                "m3.medium", 
+                "m3.xlarge", 
+                "r3.2xlarge", 
+                "r3.4xlarge", 
+                "r3.8xlarge", 
+                "r3.large", 
+                "r3.xlarge", 
+                "t1.micro", 
+                "t2.medium", 
+                "t2.micro", 
+                "t2.small"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
