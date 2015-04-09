@@ -18,8 +18,8 @@ from troposphere import Ref, Tags, ec2
 WILDCARD_CIDR = '0.0.0.0/0'
 
 EC2_REGIONS = [
-    'us-east-1', 'us-west-1', 'us-west-2', 'eu-west-1', 'ap-southeast-1',
-    'ap-southeast-2', 'ap-northeast-1', 'sa-east-1'
+    # 'us-east-1', 'us-west-1', 'us-west-2', 'eu-west-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'sa-east-1'
+    'eu-west-1',
 ]
 
 EC2_INSTANCE_TYPES = [

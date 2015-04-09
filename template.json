@@ -3,55 +3,13 @@
     "Description": "A VPC stack that includes public and private subnets with a Consul cluster for DNS, service discovery and configuration management", 
     "Mappings": {
         "AWSNATAMI": {
-            "ap-northeast-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "ap-southeast-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "ap-southeast-2": {
-                "AMI": "ami-ad227cc4"
-            }, 
             "eu-west-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "sa-east-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "us-east-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "us-west-1": {
-                "AMI": "ami-ad227cc4"
-            }, 
-            "us-west-2": {
-                "AMI": "ami-ad227cc4"
+                "AMI": "ami-c02b04a8"
             }
         }, 
         "UBUNTUAMI": {
-            "ap-northeast-1": {
-                "AMI": "ami-1dd8fe1c"
-            }, 
-            "ap-southeast-1": {
-                "AMI": "ami-eef8a2bc"
-            }, 
-            "ap-southeast-2": {
-                "AMI": "ami-a524449f"
-            }, 
             "eu-west-1": {
-                "AMI": "ami-b8c41ccf"
-            }, 
-            "sa-east-1": {
-                "AMI": "ami-67a60d7a"
-            }, 
-            "us-east-1": {
-                "AMI": "ami-08389d60"
-            }, 
-            "us-west-1": {
-                "AMI": "ami-75ede230"
-            }, 
-            "us-west-2": {
-                "AMI": "ami-2d9add1d"
+                "AMI": "ami-23bbdc54"
             }
         }
     }, 
@@ -75,9 +33,6 @@
         "BastionInstanceType": {
             "AllowedValues": [
                 "t1.micro", 
-                "t2.micro", 
-                "t2.small", 
-                "t2.medium", 
                 "m1.small", 
                 "m1.medium", 
                 "m1.large", 
@@ -90,7 +45,8 @@
                 "c1.medium", 
                 "c1.xlarge", 
                 "cc1.4xlarge", 
-                "cc2.8xlarge"
+                "cc2.8xlarge", 
+                "cg1.4xlarge"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
@@ -100,9 +56,6 @@
         "ConsulInstanceType": {
             "AllowedValues": [
                 "t1.micro", 
-                "t2.micro", 
-                "t2.small", 
-                "t2.medium", 
                 "m1.small", 
                 "m1.medium", 
                 "m1.large", 
@@ -115,7 +68,8 @@
                 "c1.medium", 
                 "c1.xlarge", 
                 "cc1.4xlarge", 
-                "cc2.8xlarge"
+                "cc2.8xlarge", 
+                "cg1.4xlarge"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
@@ -129,9 +83,6 @@
         "NATInstanceType": {
             "AllowedValues": [
                 "t1.micro", 
-                "t2.micro", 
-                "t2.small", 
-                "t2.medium", 
                 "m1.small", 
                 "m1.medium", 
                 "m1.large", 
@@ -144,7 +95,8 @@
                 "c1.medium", 
                 "c1.xlarge", 
                 "cc1.4xlarge", 
-                "cc2.8xlarge"
+                "cc2.8xlarge", 
+                "cg1.4xlarge"
             ], 
             "ConstraintDescription": "must be a valid EC2 instance type.", 
             "Default": "m1.small", 
@@ -175,7 +127,7 @@
                         "AssociatePublicIpAddress": "true", 
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for bastion host", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "BastionSecurityGroup"
@@ -289,7 +241,7 @@
                     {
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for Consul host", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "ConsulSecurityGroup"
@@ -331,7 +283,7 @@
                     {
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for Consul host", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "ConsulSecurityGroup"
@@ -373,7 +325,7 @@
                     {
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for Consul host", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "ConsulSecurityGroup"
@@ -680,7 +632,7 @@
                         "AssociatePublicIpAddress": "true", 
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for NAT device", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "NATSecurityGroup"
@@ -724,7 +676,7 @@
                         "AssociatePublicIpAddress": "true", 
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for NAT device", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "NATSecurityGroup"
@@ -768,7 +720,7 @@
                         "AssociatePublicIpAddress": "true", 
                         "DeleteOnTermination": "true", 
                         "Description": "ENI for NAT device", 
-                        "DeviceIndex": 0, 
+                        "DeviceIndex": "0", 
                         "GroupSet": [
                             {
                                 "Ref": "NATSecurityGroup"
