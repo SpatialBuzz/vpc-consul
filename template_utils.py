@@ -19,10 +19,7 @@ from troposphere import Ref, Tags, ec2
 
 WILDCARD_CIDR = '0.0.0.0/0'
 
-EC2_REGIONS = [
-    # 'us-east-1', 'us-west-1', 'us-west-2', 'eu-west-1', 'ap-southeast-1', 'ap-southeast-2', 'ap-northeast-1', 'sa-east-1'
-    'eu-west-1',
-]
+EC2_REGIONS = sorted([r.name for r in boto.ec2.regions() if r.name != 'cn-north-1' and r.name != 'us-gov-west-1'])
 
 EC2_INSTANCE_TYPES = [
     't1.micro', 'm1.small', 'm1.medium', 'm1.large', 'm1.xlarge',
