@@ -34,3 +34,4 @@ env/
 
 *.db
 *cache*
+*.pem
