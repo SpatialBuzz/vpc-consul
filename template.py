@@ -11,11 +11,11 @@ from troposphere import Template, Parameter, Ref, FindInMap, Output, GetAtt, \
 
 import template_utils as utils
 
-import boto
-
-if not boto.config.has_section('Boto'):
-    boto.config.add_section('Boto')
-boto.config.set('Boto', 'debug', '2')
+# enable for debugging endpoint API calls
+# import boto
+# if not boto.config.has_section('Boto'):
+#     boto.config.add_section('Boto')
+# boto.config.set('Boto', 'debug', '2')
 
 t = Template()
 
