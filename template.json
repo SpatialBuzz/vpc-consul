@@ -4,7 +4,7 @@
     "Mappings": {
         "AWSNATAMI": {
             "eu-west-1": {
-                "AMI": "ami-c02b04a8"
+                "AMI": "ami-cb7de3bc"
             }
         }, 
         "UBUNTUAMI": {

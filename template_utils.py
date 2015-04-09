@@ -12,6 +12,8 @@ import os
 import requests
 
 import boto
+import boto.ec2
+
 from troposphere import Ref, Tags, ec2
 
 
@@ -56,7 +58,7 @@ def get_bastion_instance_mapping():
 
 def get_nat_instance_mapping():
     def get_image_id(region):
-        c = boto.connect_ec2()
+        c = boto.ec2.connect_to_region(region)
         all_images = c.get_all_images(owners='amazon', filters={'name': '*ami-vpc-nat*'})
         images = [i for i in all_images if 'beta' not in i.name]
         return sorted(images, key=lambda i: i.name, reverse=True)[0].id
