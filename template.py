@@ -56,7 +56,7 @@ nat_instance_type_param = t.add_parameter(Parameter(
 ))
 
 availability_zones = t.add_parameter(Parameter(
-    'AvailabilityZones', Type='CommaDelimitedList', Default='a,b,e',
+    'AvailabilityZones', Type='CommaDelimitedList', Default='a,b,c',
     Description='A list of three availability zone letters to distribute the '
                 'subnets across.'
 ))

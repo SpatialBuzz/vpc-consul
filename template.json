@@ -26,7 +26,7 @@
     }, 
     "Parameters": {
         "AvailabilityZones": {
-            "Default": "a,b,e", 
+            "Default": "a,b,c", 
             "Description": "A list of three availability zone letters to distribute the subnets across.", 
             "Type": "CommaDelimitedList"
         }, 
