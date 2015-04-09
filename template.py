@@ -11,6 +11,12 @@ from troposphere import Template, Parameter, Ref, FindInMap, Output, GetAtt, \
 
 import template_utils as utils
 
+import boto
+
+if not boto.config.has_section('Boto'):
+    boto.config.add_section('Boto')
+boto.config.set('Boto', 'debug', '2')
+
 t = Template()
 
 t.add_version('2010-09-09')
@@ -209,7 +215,7 @@ for index in range(3):
                 SubnetId=Ref(public_subnet),
                 PrivateIpAddress='10.0.%s.4' % index,
                 AssociatePublicIpAddress=True,
-                DeviceIndex=0,
+                DeviceIndex="0",
                 DeleteOnTermination=True,
             )
         ],
@@ -256,7 +262,7 @@ for index in range(3):
                 GroupSet=[Ref(consul_security_group)],
                 SubnetId=Ref(private_subnet),
                 PrivateIpAddress='10.0.%s.4' % (16 + 16 * index),
-                DeviceIndex=0,
+                DeviceIndex="0",
                 DeleteOnTermination=True,
             )
         ],
@@ -295,7 +301,7 @@ bastion_host = t.add_resource(ec2.Instance(
             GroupSet=[Ref(bastion_security_group)],
             SubnetId=Ref(public_subnets[0]),
             AssociatePublicIpAddress=True,
-            DeviceIndex=0,
+            DeviceIndex="0",
             DeleteOnTermination=True
         )
     ],
